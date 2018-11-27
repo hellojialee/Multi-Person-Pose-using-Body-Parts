@@ -41,7 +41,8 @@ The corresponding code is in pure python without multiprocess for now.
 
     
 ## Referred Repositories
--  [Realtime Multi-Person Pose Estimation verson 1](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
--  [Realtime Multi-Person Pose Estimation verson 2](https://github.com/michalfaber/keras_Realtime_Multi-Person_Pose_Estimation)
+-  [Realtime Multi-Person Pose Estimation verson 1](https://github.com/michalfaber/keras_Realtime_Multi-Person_Pose_Estimation)
+-  [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
 -  [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
+-  [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
 - [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](https://github.com/jinkos/multi-gpus)
