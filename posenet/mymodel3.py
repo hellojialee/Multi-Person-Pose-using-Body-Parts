@@ -19,13 +19,13 @@ def relu(x): return Activation('relu')(x)
 
 
 def conv(x, nf, ks, name, weight_decay, stride=1, use_bias=False, use_bn=False, use_relu=True):
-    kernel_reg = l2(weight_decay[0]) if weight_decay else None  # 后面给的值是(weight_decay, 0)，所以没有对bias做规则化
+    kernel_reg = l2(weight_decay[0]) if weight_decay else None
     bias_reg = l2(weight_decay[1]) if weight_decay else None
 
     x = Conv2D(nf, (ks, ks), strides=stride, padding='same', name=name,
-               kernel_regularizer=kernel_reg,  # 如果没有这一个参数，那么传递的就是None
+               kernel_regularizer=kernel_reg,
                bias_regularizer=bias_reg,
-               kernel_initializer=random_normal(stddev=0.01),  #Initializer that generates tensors with a normal distribution
+               kernel_initializer=random_normal(stddev=0.01),  # Initializer that generates tensors with a normal distribution
                bias_initializer=constant(0.0),
                use_bias=use_bias)(x)
     if use_bn:
@@ -38,15 +38,15 @@ def conv(x, nf, ks, name, weight_decay, stride=1, use_bias=False, use_bn=False, 
 
 
 def dilated_conv(x, nf, ks, name, weight_decay, stride=1, use_bias=False, dialated_rate=2, use_bn=False, use_relu=True):
-    kernel_reg = l2(weight_decay[0]) if weight_decay else None  # 后面给的值是(weight_decay, 0)，所以没有对bias做规则化
+    kernel_reg = l2(weight_decay[0]) if weight_decay else None
     bias_reg = l2(weight_decay[1]) if weight_decay else None
 
     x = Conv2D(nf, (ks, ks), strides=stride, padding='same',
                dilation_rate=dialated_rate,
                name=name,
-               kernel_regularizer=kernel_reg,  # 如果没有这一个参数，那么传递的就是None
+               kernel_regularizer=kernel_reg,
                bias_regularizer=bias_reg,
-               kernel_initializer=random_normal(stddev=0.01), #Initializer that generates tensors with a normal distribution
+               kernel_initializer=random_normal(stddev=0.01),
                bias_initializer=constant(0.0),
                use_bias=use_bias)(x)
 
@@ -86,15 +86,12 @@ def ones_like():
 
 def apply_mask(x, mask1, mask2, num_p, stage, branch, np_branch1, np_branch2):
     w_name = "weight_stage%d_L%d" % (stage, branch)
-    # s_name = "weight_stage%d_L%d" % (stage, branch)
-
-    # TODO: we have branch number here why we made so strange check
-    assert np_branch1 != np_branch2  # we selecting branches by number of pafs, if they accidentally became the same it will be disaster
+    assert np_branch1 != np_branch2
 
     if num_p == np_branch1:
-        w = Multiply(name=w_name)([x, mask1])  # vec_weight
+        w = Multiply(name=w_name)([x, mask1])
     elif num_p == np_branch2:
-        w = Multiply(name=w_name)([x, mask2])  # vec_heat
+        w = Multiply(name=w_name)([x, mask2])
     else:
         assert False, "wrong number of layers num_p=%d " % num_p
     # w = slice_layer(name=s_name)(w)
@@ -243,19 +240,18 @@ def stage1_block(x, num_p, stack_number, branch, weight_decay):
     x_3 = dilated_conv(x_3, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv32' % (stack_number, branch),
                      weight_decay, dialated_rate=2, use_bias=True)
     x_3 = dilated_conv(x_3, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv33' % (stack_number, branch),
-                       weight_decay, dialated_rate=5, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=5, use_bias=True)
 
     # dilation 3,4,5,5的感受野是35
     x_4 = conv(x, 64, 1, 'iposenet_stack_%d_branch_%d_main_conv41' % (stack_number, branch), weight_decay, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv42' % (stack_number, branch),
                      weight_decay, dialated_rate=3, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv43' % (stack_number, branch),
-                       weight_decay, dialated_rate=4, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=4, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv44' % (stack_number, branch),
-                       weight_decay, dialated_rate=5, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=5, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv45' % (stack_number, branch),
-                       weight_decay, dialated_rate=5, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
-
+                       weight_decay, dialated_rate=5, use_bias=True)
     #
     concate = Concatenate()([x_1, x_2, x_3, x_4])
     concate = conv(concate, 256, 1, 'iposenet_stack_%d_branch_%d_main_conv_cate' % (stack_number, branch), weight_decay, use_bias=True, use_relu=False)
@@ -289,7 +285,7 @@ def stage_block(x, num_p, stack_number, branch, weight_decay):
     x_3 = dilated_conv(x_3, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv32' % (stack_number, branch),
                      weight_decay, dialated_rate=3, use_bias=True)
     x_3 = dilated_conv(x_3, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv33' % (stack_number, branch),
-                       weight_decay, dialated_rate=4, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=4, use_bias=True)
 
     # dilation=3,3,4,4,5,5的组合的感受野是49,而输入feature map尺寸为46*46
     x_4 = conv(x, 64, 1, 'iposenet_stack_%d_branch_%d_main_conv41' % (stack_number, branch), weight_decay, use_bias=True)
@@ -300,11 +296,11 @@ def stage_block(x, num_p, stack_number, branch, weight_decay):
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv44' % (stack_number, branch),
                      weight_decay, dialated_rate=4, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv45' % (stack_number, branch),
-                       weight_decay, dialated_rate=4, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=4, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv46' % (stack_number, branch),
-                       weight_decay, dialated_rate=5, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=5, use_bias=True)
     x_4 = dilated_conv(x_4, 64, 3, 'iposenet_stack_%d_branch_%d_main_diated_conv47' % (stack_number, branch),
-                       weight_decay, dialated_rate=5, use_bias=True)  # todo: 计算一下感受野，看看是否需要再更大
+                       weight_decay, dialated_rate=5, use_bias=True)
 
     #
     concate = Concatenate()([x_1, x_2, x_3, x_4])
@@ -339,14 +335,14 @@ def get_testing_model(np_branch1=36, np_branch2=19, stages=3, weight_decay=None)
     # resnet = ResNet50(img_input, weight_decay)
     # stage0_out = resnet(img_normalized)
 
-    # stage 1 - branch 1 (PAF)
+    # stage 1 - branch 1
     new_x = []
     after_out = []
     stage1_branch1_out, featuremap_next1 = stage1_block(stage0_out, np_branch1, 1, 1, (None, 0))
     new_x.append(featuremap_next1)
     after_out.append(stage1_branch1_out)
 
-    # stage 1 - branch 2 (confidence maps)
+    # stage 1 - branch 2
     stage1_branch2_out, featuremap_next2 = stage1_block(stage0_out, np_branch2, 1, 2, (None, 0))
     new_x.append(featuremap_next2)
     after_out.append(stage1_branch2_out)
@@ -355,7 +351,7 @@ def get_testing_model(np_branch1=36, np_branch2=19, stages=3, weight_decay=None)
     out_cov = Concatenate()(after_out)
     out_cov = conv(out_cov, 256, 1, 'iposenet_stack_%d_afterpred_conv' % 1, weight_decay, use_bias=True)
     new_x.append(out_cov)
-    x = Add()(new_x)  # Concatenate要变成加，要保持hourglass输入的ch
+    x = Add()(new_x)
 
     # stage t >= 2
     stageT_branch1_out = None
