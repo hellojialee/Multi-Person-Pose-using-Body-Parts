@@ -40,7 +40,7 @@ The corresponding code is in pure python without multiprocess for now.
 - [] The training code is available soon
 
     
-## Referred Repositories
+## Referred Repositories (mainly)
 -  [Realtime Multi-Person Pose Estimation verson 1](https://github.com/michalfaber/keras_Realtime_Multi-Person_Pose_Estimation)
 -  [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
 -  [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
