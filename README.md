@@ -16,8 +16,10 @@ The complete source code will be released as soon as the paper is accepted.
 ### Results on COCO Validation Dataset 
 
 
-## Code Features
+## Project Features
 - Implement the models using Keras with TensorFlow backend
+- VGG as the backbone
+- No batch normalization layer
 - Supprot training on multiple GPUs and slice training samples among GPUs
 - Fast data preparing and augmentation during training
 - Different learning rate at different layers
@@ -34,7 +36,39 @@ The complete source code will be released as soon as the paper is accepted.
 ## Evaluation Steps
 The corresponding code is in pure python without multiprocess for now.
 
-`python testing/evaluation.py`
+`python testing/evaluation.py` 
+
+Results on MSCOCO 2018 validation subset (model trained without val data, default size 368, 4 scales)
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.581
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.796
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.632
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.557
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.618
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.620
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.811
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.669
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.577
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.684
+over!
+```
+
+
+Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
+```
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.607
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.817
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.661
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.581
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.652
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.647
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.837
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.692
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.600
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.717
+```
+
+
 
 ## Training Steps
 - [] The training code is available soon
