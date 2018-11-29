@@ -11,7 +11,7 @@ The complete source code will be released as soon as the paper is accepted.
 3. Demo
 
 ### Task Lists
-- [] Rewrite and speed up the code of keypoint assignment in C++ 
+- [ ] Rewrite and speed up the code of keypoint assignment in C++ 
 
 ### Results on COCO Validation Dataset 
 
@@ -50,7 +50,6 @@ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.581
  Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.669
  Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.577
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.684
-over!
 ```
 
 
@@ -71,7 +70,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
 
 
 ## Training Steps
-- [] The training code is available soon
+- [ ] The training code is available soon
 
     
 ## Referred Repositories (mainly)
