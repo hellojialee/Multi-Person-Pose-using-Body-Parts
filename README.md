@@ -68,7 +68,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
 ```
 
 ## Update
-Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales
+Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
 
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.622
