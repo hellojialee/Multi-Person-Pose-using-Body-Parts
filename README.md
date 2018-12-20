@@ -67,7 +67,21 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.717
 ```
 
+## Update
+Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales
 
+```
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.622
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.828
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.674
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.594
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.669
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.659
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.844
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.706
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.613
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.730
+```
 
 ## Training Steps
 - [ ] The training code is available soon
