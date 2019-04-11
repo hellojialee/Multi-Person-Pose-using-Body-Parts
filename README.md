@@ -67,7 +67,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.717
 ```
 
-## Update
+## Update 
 Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
 
 ```
@@ -95,8 +95,27 @@ Results on MSCOCO 2018 test subset
  Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.686
  Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.598
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
-Done (t=21.16s)
 ```
+
+
+## News!
+Recently, we are lucky to have time and machine to utilize. Thus, we revisit our previous work.
+More accurate results had been achieved after we adopted more powerful Network and 
+use higher resolution of heatmap (stride=4). Enhanced modeles with body part representation
+, variant loss function and training parameters have been tried these days. 
+```angular2
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.660
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.823
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.717
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.662
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.676
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.703
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.855
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.751
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.680
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.738
+```
+
 
 ## Training Steps
 - [ ] The training code is available soon
