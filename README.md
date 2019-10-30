@@ -47,9 +47,9 @@ The corresponding code is in pure python without multiprocess for now.
 
 `python testing/evaluation.py` 
 
-### Results on MS-COCO  Dataset
+### Results on MSCOCO2018  Dataset
 
-Results on MS-COCO validation subset (model trained without val data, default size 368, 4 scales)
+Results on MSCOCO2018 validation subset (model trained without val data, default size 368, 4 scales)
 
 ```
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.581
