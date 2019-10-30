@@ -1,44 +1,56 @@
 # Multi-Person Pose Estimation using Body Parts
-Code and pre-trained models for our paper.
+
+Code and pre-trained models for our paper "*Multi-Person Pose Estimation Based on Body Parts*"
+
+This repo is the **Part A** of our paper project.
+
+**Pat B** is in the repo on GitHub: [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
+
+
 
 ## Introduction
-A bottom-up approach for the problem of multi-person pose estimation.
-The complete source code will be released as soon as the paper is accepted.
+
+A bottom-up approach for the problem of multi-person pose estimation. This **Part** is based on the network backbones in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) (namely OpenPose). 
 
 ### Contents
+
 1. Training 
 2. Evaluation 
 3. Demo
 
 ### Task Lists
+
 - [ ] Rewrite and speed up the code of keypoint assignment in C++ 
 
-### Results on COCO Validation Dataset 
-
-
 ## Project Features
-- Implement the models using Keras with TensorFlow backend
+
+- Implement the models using **Keras with TensorFlow backend**
 - VGG as the backbone
-- No batch normalization layer
+- No batch normalization layer 
 - Supprot training on multiple GPUs and slice training samples among GPUs
 - Fast data preparing and augmentation during training
 - Different learning rate at different layers
 
 ## Prepare
+
 1. Download the COCO dataset 
 2. [Download the pre-trained models](https://www.dropbox.com/s/bsr03ahhnaxppnf/model%26demo.rar?dl=0) 
 3. Change the paths in the code according to your environment
 
 ## Run a Demo
+
 `python demo_image.py`
 
-
 ## Evaluation Steps
+
 The corresponding code is in pure python without multiprocess for now.
 
 `python testing/evaluation.py` 
 
-Results on MSCOCO 2018 validation subset (model trained without val data, default size 368, 4 scales)
+### Results on MS-COCO  Dataset
+
+Results on MS-COCO validation subset (model trained without val data, default size 368, 4 scales)
+
 ```
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.581
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.796
@@ -52,8 +64,8 @@ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.581
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.684
 ```
 
-
 Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
+
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.607
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.817
@@ -68,6 +80,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
 ```
 
 ## Update 
+
 Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
 
 ```
@@ -84,6 +97,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
 ```
 
 Results on MSCOCO 2018 test subset 
+
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.599
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.825
@@ -97,33 +111,38 @@ Results on MSCOCO 2018 test subset
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
 ```
 
-
 ## News!
+
 Recently, we are lucky to have time and machine to utilize. Thus, we revisit our previous work.
 More accurate results had been achieved after we adopted more powerful Network and 
 use higher resolution of heatmap (stride=4). Enhanced modeles with body part representation
 , variant loss function and training parameters have been tried these days. 
-```angular2
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.660
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.823
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.717
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.662
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.676
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.703
- Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.855
- Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.751
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.680
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.738
+
+Please refer to  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
+
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.864
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.745
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.668
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.721
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.882
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.775
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.683
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.773
 ```
 
-
 ## Training Steps
-- [ ] The training code is available soon
+
+- [x] The training code is available
 
     
+
 ## Referred Repositories (mainly)
--  [Realtime Multi-Person Pose Estimation verson 1](https://github.com/michalfaber/keras_Realtime_Multi-Person_Pose_Estimation)
--  [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
--  [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
--  [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
-- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](https://github.com/jinkos/multi-gpus)
+
+- [Realtime Multi-Person Pose Estimation verson 1](https://github.com/michalfaber/keras_Realtime_Multi-Person_Pose_Estimation)
+- [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
+- [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
+- [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
+- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](
