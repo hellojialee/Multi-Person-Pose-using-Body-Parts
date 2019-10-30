@@ -96,7 +96,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.730
 ```
 
-Results on MSCOCO 2018 test subset 
+Results on MSCOCO 2018 test-dev subset 
 
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.599
@@ -120,6 +120,7 @@ use higher resolution of heatmap (stride=4). Enhanced modeles with body part rep
 
 Please refer to  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
 
+Results on MSCOCO 2018 test-dev subset 
 ```
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.864
