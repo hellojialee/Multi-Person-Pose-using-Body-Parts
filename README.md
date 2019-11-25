@@ -6,8 +6,6 @@ This repo is the **Part A** of our paper project.
 
 **Pat B** is in the repo on GitHub: [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
 
-
-
 ## Introduction
 
 A bottom-up approach for the problem of multi-person pose estimation. This **Part** is based on the network backbones in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) (namely OpenPose). 
@@ -34,7 +32,7 @@ A bottom-up approach for the problem of multi-person pose estimation. This **Par
 ## Prepare
 
 1. Download the COCO dataset 
-2. [Download the pre-trained models](https://www.dropbox.com/s/bsr03ahhnaxppnf/model%26demo.rar?dl=0) 
+2. [Download the pre-trained models from dropbox](https://www.dropbox.com/s/bsr03ahhnaxppnf/model%26demo.rar?dl=0) 
 3. Change the paths in the code according to your environment
 
 ## Run a Demo
@@ -115,12 +113,13 @@ Results on MSCOCO 2018 test-dev subset
 
 Recently, we are lucky to have time and machine to utilize. Thus, we revisit our previous work.
 More accurate results had been achieved after we adopted more powerful Network and 
-use higher resolution of heatmap (stride=4). Enhanced modeles with body part representation
+use higher resolution of heatmap (stride=4). Enhanced models with body part representation
 , variant loss function and training parameters have been tried these days. 
 
-Please refer to  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
+Please also refer to our new repo:  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
 
 Results on MSCOCO 2018 test-dev subset 
+
 ```
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.864
@@ -136,9 +135,9 @@ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
 
 ## Training Steps
 
-- [x] The training code is available
+Before training, prepare the training data using ''training/coco_masks_hdf5.py''.
 
-    
+- [x] The training code is available
 
 ## Referred Repositories (mainly)
 
@@ -146,4 +145,4 @@ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
 - [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
 - [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
 - [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
-- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](https://github.com/jinkos/multi-gpus)
+- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](
