@@ -79,7 +79,7 @@ def prepare(config, config_name, exp_id, train_samples, val_samples, batch_size,
         model = get_training_model(weight_decay, np_branch1=config.paf_layers, np_branch2=config.heat_layers+1, stack_number=3)  # fixme: background heat_layers+1
         # +1是因为加上了背景类
     # todo: the key 'stages=' decide how many stages of the CNN model we will build
-    multi_model = ratio_training_utils.multi_gpu_model(model, gpus=[0, 1], ratios=[3, 2])  # 1080ti的id是0,　1080的是1
+    multi_model = ratio_training_utils.multi_gpu_model(model, gpus=[0, 1], ratios=[3, 2])  # 1080ti's id is 0,　1080's id is 1
     # multi_model = multi_gpu_model(model, gpus=2)  # 1080ti的id是0,　1080的是1
 
 

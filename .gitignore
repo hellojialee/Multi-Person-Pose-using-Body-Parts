@@ -7,3 +7,5 @@
 *.iml
 out
 gen
+/training/logs/iposenet_L2/
+/training/logs/iposenet_focal_L2/
