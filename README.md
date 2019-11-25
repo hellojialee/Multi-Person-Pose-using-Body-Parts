@@ -8,7 +8,7 @@ This repo is the **Part A** of our paper project.
 
 ## Introduction
 
-A bottom-up approach for the problem of multi-person pose estimation. This **Part** is based on the network backbones in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) (namely OpenPose). 
+A bottom-up approach for the problem of multi-person pose estimation. This **Part** is based on the network backbones in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) (namely OpenPose). A modified network is also trained and evalutated. 
 
 ### Contents
 
@@ -18,7 +18,7 @@ A bottom-up approach for the problem of multi-person pose estimation. This **Par
 
 ### Task Lists
 
-- [ ] Rewrite and speed up the code of keypoint assignment in C++ 
+- [ ] Add more descriptions and complete the project
 
 ## Project Features
 
@@ -32,7 +32,7 @@ A bottom-up approach for the problem of multi-person pose estimation. This **Par
 ## Prepare
 
 1. Download the COCO dataset 
-2. [Download the pre-trained models from dropbox](https://www.dropbox.com/s/bsr03ahhnaxppnf/model%26demo.rar?dl=0) 
+2. [Download the pre-trained models from Dropbox](https://www.dropbox.com/s/bsr03ahhnaxppnf/model%26demo.rar?dl=0) 
 3. Change the paths in the code according to your environment
 
 ## Run a Demo
@@ -45,24 +45,9 @@ The corresponding code is in pure python without multiprocess for now.
 
 `python testing/evaluation.py` 
 
-### Results on MSCOCO2018  Dataset
+### Results on MSCOCO2017  Dataset
 
-Results on MSCOCO2018 validation subset (model trained without val data, default size 368, 4 scales)
-
-```
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.581
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.796
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.632
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.557
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.618
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.620
- Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.811
- Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.669
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.577
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.684
-```
-
-Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
+Results on MSCOCO 2017 validation subset (model trained without val data, + focal L2 loss, default size 368, 4 scales + flip)
 
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.607
@@ -77,9 +62,11 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.717
 ```
 
-## Update 
+## Update
 
-Results on MSCOCO 2018 validation subset (model trained with val data, default size 368, 4 scales)
+![model3](posenet/model3.png)
+
+Results of posenet/model3 on MSCOCO 2017 validation subset (model trained with val data, + focal L2 loss, default size 368, 4 scales + flip). 
 
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.622
@@ -94,7 +81,7 @@ Results on MSCOCO 2018 validation subset (model trained with val data, default s
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.730
 ```
 
-Results on MSCOCO 2018 test-dev subset 
+Results on MSCOCO 2017 test-dev subset (model trained with val data, + focal L2 loss, default size 368, 8 scales + flip)
 
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.599
@@ -109,16 +96,15 @@ Results on MSCOCO 2018 test-dev subset
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
 ```
 
-## News!
+According to our results, the performance of posenet/model3 in this repo is similar to CMU-Net (the cascaed CNN used in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) ), which means only merging different feature maps with diferent receptive fields at low resolution heatmaps could not help much.
 
-Recently, we are lucky to have time and machine to utilize. Thus, we revisit our previous work.
-More accurate results had been achieved after we adopted more powerful Network and 
-use higher resolution of heatmap (stride=4). Enhanced models with body part representation
-, variant loss function and training parameters have been tried these days. 
+##News!
 
-Please also refer to our new repo:  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
+Recently, we are lucky to have time and machine to utilize. Thus, we revisit our previous work. More accurate results had been achieved after we adopted more powerful Network and use higher resolution of heatmaps (stride=4). Enhanced models with body part representation, variant loss functions and training parameters have been tried. 
 
-Results on MSCOCO 2018 test-dev subset 
+<font color="#0000dd">Please also refer to our new repo</font>:  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts)
+
+Results on MSCOCO 2017 test-dev subset 
 
 ```
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
