@@ -64,6 +64,8 @@ Results on MSCOCO 2017 validation subset (model trained without val data, + foca
 
 ## Update
 
+Tried new network structure.
+
 ![model3](posenet/model3.png)
 
 Results of posenet/model3 on MSCOCO 2017 validation subset (model trained with val data, + focal L2 loss, default size 368, 4 scales + flip). 
@@ -119,7 +121,7 @@ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.773
 ```
 
-## Training Steps
+## Training Steps 
 
 Before training, prepare the training data using ''training/coco_masks_hdf5.py''.
 
