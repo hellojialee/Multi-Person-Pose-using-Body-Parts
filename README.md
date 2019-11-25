@@ -133,4 +133,4 @@ Before training, prepare the training data using ''training/coco_masks_hdf5.py''
 - [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
 - [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
 - [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
-- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](
+- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](https://github.com/jinkos/multi-gpus)
