@@ -135,7 +135,7 @@ Before training, prepare the training data using ''training/coco_masks_hdf5.py''
 
 `python training/train_pose.py`
 
-**Notice**: change the feeded sample ratios between different GPUs at [this line in the code](https://github.com/jialee93/Multi-Person-Pose-using-Body-Parts/blob/7dd783f8dca4a8292232fcc724ecbd911a69f428/training/train_common.py#L82 ) as you want. 
+**Notice**: change the sample slicing ratios between different GPUs at [this line in the code](https://github.com/jialee93/Multi-Person-Pose-using-Body-Parts/blob/7dd783f8dca4a8292232fcc724ecbd911a69f428/training/train_common.py#L82 ) as you want. 
 
 ## Referred Repositories (mainly)
 
