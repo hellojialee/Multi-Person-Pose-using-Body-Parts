@@ -72,7 +72,7 @@ Results on MSCOCO 2017 validation subset (model trained without val data, + foca
 
 We have tried new network structures.
 
-<img src="https://github.com/jialee93/Multi-Person-Pose-using-Body-Parts/blob/master/posenet/model3.png" width="60%">
+<img src="https://github.com/jialee93/Multi-Person-Pose-using-Body-Parts/blob/master/posenet/model3.png" width="75%">
 
 Results of posenet/model3 on MSCOCO 2017 validation subset (model trained with val data, + focal L2 loss, default size 368, 4 scales + flip). 
 
