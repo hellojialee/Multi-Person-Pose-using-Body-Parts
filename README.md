@@ -98,7 +98,7 @@ Results on MSCOCO 2017 test-dev subset (model trained with val data, + focal L2 
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
 ```
 
-According to our results, the performance of posenet/model3 in this repo is similar to CMU-Net (the cascaed CNN used in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) ), which means only merging different feature maps with diferent receptive fields at low resolution heatmaps could not help much.
+According to our results, the performance of posenet/model3 in this repo is similar to CMU-Net (the cascaed CNN used in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) ), which means only merging different feature maps with diferent receptive fields at low resolution heatmaps could not help much (without offset regression).
 
 ## News!
 
@@ -133,4 +133,4 @@ Before training, prepare the training data using ''training/coco_masks_hdf5.py''
 - [Realtime Multi-Person Pose Estimation verson 2](https://github.com/anatolix/keras_Realtime_Multi-Person_Pose_Estimation)
 - [Realtime Multi-Person Pose Estimation version 3](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
 - [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
-- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](https://github.com/jinkos/multi-gpus)
+- [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](
