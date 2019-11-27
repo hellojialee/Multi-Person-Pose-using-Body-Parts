@@ -10,6 +10,8 @@ This repo is the **Part A** of our paper project.
 
 A bottom-up approach for the problem of multi-person pose estimation. This **Part** is based on the network backbones in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) (namely OpenPose). A modified network is also trained and evalutated. 
 
+![method](https://github.com/jialee93/Improved-Body-Parts/raw/master/visulizatoin/2987.Figure2.png)
+
 ### Contents
 
 1. Training 
