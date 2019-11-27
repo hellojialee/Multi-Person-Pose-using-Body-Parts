@@ -104,7 +104,7 @@ Results on MSCOCO 2017 test-dev subset (model trained with val data, + focal L2 
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
 ```
 
-According to our results, the performance of posenet/model3 in this repo is similar to CMU-Net (the cascaed CNN used in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) ), which means only merging different feature maps with diferent receptive fields at low resolution (stride=4) could not help much (without offset regression). And the limitted capacity of the network is also a bottleneck of the estimation accuracy. 
+According to our results, the performance of posenet/model3 in this repo is similar to CMU-Net (the cascaed CNN used in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) ), which means only merging different feature maps with diferent receptive fields at low resolution (stride=8) could not help much (without offset regression). And the limitted capacity of the network is also a bottleneck of the estimation accuracy. 
 
 ## News!
 
@@ -115,7 +115,7 @@ Recently, we are lucky to have time and machine to utilize. Thus, we revisit our
 Results on MSCOCO 2017 test-dev subset 
 
 ```
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.864
  Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.745
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.668
