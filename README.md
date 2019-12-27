@@ -114,6 +114,8 @@ Recently, we are lucky to have time and machine to utilize. Thus, we revisit our
 
 <font color="#0000dd">Please also refer to our new repo</font>:  [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts) (highly recommended)
 
+[improved](https://github.com/jialee93/Improved-Body-Parts/blob/master/visulizatoin/2987.Figure3.png)
+
 Results on MSCOCO 2017 test-dev subset 
 
 ```
