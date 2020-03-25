@@ -129,10 +129,9 @@ def prepare(config, config_name, exp_id, train_samples, val_samples, batch_size,
 
         return focal_loss_fixed
 
-    def focal_loss_eucl(y_true, y_pred):   # see the original focal loss again , 　权重系数是怎么设置的
-        # alpha = 0.25  # 原始是2.0
+    def focal_loss_eucl(y_true, y_pred):  # i.e. focal l2 loss
         gamma = 2.0
-        pt = tf.where(tf.greater(y_true, 0.01), y_pred, 1 - y_pred)  #　原始是0.3
+        pt = tf.where(tf.greater(y_true, 0.01), y_pred, 1 - y_pred)  
         return K.sum(K.pow(1. - pt, gamma) * K.square(y_true - y_pred)) / batch_size / 2
 
     # learning rate schedule - equivalent of caffe lr_policy =  "step"
