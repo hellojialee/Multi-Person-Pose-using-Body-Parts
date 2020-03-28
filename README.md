@@ -119,16 +119,16 @@ Recently, we are lucky to have time and machine to utilize. Thus, we revisit our
 Results on MSCOCO 2017 test-dev subset 
 
 ```
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.681
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.864
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.745
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.668
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.705
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.721
- Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.882
- Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.775
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.683
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.773
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.685
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.867
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.749
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.664
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.719
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.728
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.892
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.782
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.688
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.784
 ```
 
 ## Training Steps
