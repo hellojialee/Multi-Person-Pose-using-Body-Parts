@@ -1,6 +1,6 @@
 # Multi-Person Pose Estimation using Body Parts
 
-Code and pre-trained models for our paper "*Multi-Person Pose Estimation Based on Body Parts*" (under review).
+Code and pre-trained models for our paper.
 
 This repo is the **Part A** of our paper project.
 
@@ -162,8 +162,4 @@ Please kindly cite the following papers in your publications if it helps your re
 	booktitle = {arXiv preprint arXiv:1911.10529},
 	year={2019}
 }
-```
-
-```
-Under review 
 ```
