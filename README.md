@@ -116,7 +116,7 @@ Recently, we are lucky to have time and machine to utilize. Thus, we revisit our
 
 ![improved](https://github.com/jialee93/Improved-Body-Parts/raw/master/visulizatoin/2987.Figure3.png)
 
-Results on MSCOCO 2017 test-dev subset 
+Results on MSCOCO 2017 test-dev subset (focal L2 loss, default size 512, 5 scales + flip）
 
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.685
