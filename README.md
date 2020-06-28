@@ -1,4 +1,4 @@
-# Multi-Person Pose Estimation using Body Parts
+# Multi-Person Pose Estimation using Body Parts Based on Gaussian Response Heatmaps
 
 Code and pre-trained models for our paper.
 
