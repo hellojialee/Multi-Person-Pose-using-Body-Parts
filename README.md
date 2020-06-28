@@ -1,8 +1,8 @@
-# Multi-Person Pose Estimation using Body Parts Based on Gaussian Response Heatmaps
+# Multi-Person Pose Estimation Based on Gaussian Response Heatmaps
 
 Code and pre-trained models for our paper.
 
-This repo is the **Part A** of our paper project.
+This repo is the **Part A** of our work. We associate the keypoints of individual poses using body parts.
 
 **Pat B** is in the repo on GitHub, [**Improved-Body-Parts**](https://github.com/jialee93/Improved-Body-Parts).
 
