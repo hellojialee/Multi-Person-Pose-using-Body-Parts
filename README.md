@@ -108,6 +108,9 @@ Results on MSCOCO 2017 test-dev subset (model trained with val data, + focal L2 
 
 According to our results, the performance of posenet/model3 in this repo is similar to CMU-Net (the cascaed CNN used in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) ), which means only merging different feature maps with diferent receptive fields at low resolution (stride=8) could not help much (without offset regression). And the limitted capacity of the network is also a bottleneck of the estimation accuracy. 
 
+## FYI
+New pre-trained IMHN models achieving over 0.69 AP on the MSCOCO test-dev dataset is to be shared soon as long as the review is done.
+
 ## News!
 
 Recently, we are lucky to have time and machine to utilize. Thus, we revisit our previous work. More accurate results had been achieved after we adopted more powerful Network and use higher resolution of heatmaps (stride=4). Enhanced models with body part representation, variant loss functions and training parameters have been tried. 
