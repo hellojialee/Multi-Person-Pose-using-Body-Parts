@@ -10,7 +10,8 @@ This repo is the **Part A** of our work. We associate the keypoints of individua
 
 A bottom-up approach for the problem of multi-person pose estimation. This **Part** is based on the network backbones in [CMU-Pose](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation) (namely OpenPose). A modified network is also trained and evalutated. 
 
-![method](https://github.com/jialee93/Improved-Body-Parts/raw/master/visulizatoin/2987.Figure2.png)
+![method](https://github.com/hellojialee/Improved-Body-Parts/raw/master/visulizatoin/2987.Figure2.png)
+![FL2](https://github.com/hellojialee/Improved-Body-Parts/blob/master/visulizatoin/fl2.png)
 
 ### Contents
 
