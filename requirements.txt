@@ -87,7 +87,7 @@ python-gflags==3.1.2
 pytz==2016.10
 PyYAML==3.12
 pyzmq==16.0.2
-requests==2.13.0
+requests==2.20.0
 retry-decorator==1.1.0
 rsa==3.4.2
 scandir==1.5
