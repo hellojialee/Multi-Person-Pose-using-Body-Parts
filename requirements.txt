@@ -85,7 +85,7 @@ pyparsing==2.2.0
 python-dateutil==2.6.0
 python-gflags==3.1.2
 pytz==2016.10
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==16.0.2
 requests==2.13.0
 retry-decorator==1.1.0
