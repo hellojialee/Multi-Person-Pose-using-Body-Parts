@@ -58,7 +58,7 @@ notebook==5.1.0rc3
 numpy==1.13.1
 oauth2client==2.2.0
 olefile==0.44
-opencv-contrib-python==3.3.0.10
+opencv-contrib-python==3.4.7.28
 packaging==16.8
 panda==0.3.1
 pandas==0.19.2
