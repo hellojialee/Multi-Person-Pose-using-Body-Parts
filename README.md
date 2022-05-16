@@ -153,6 +153,10 @@ Before training, prepare the training data using ''training/coco_masks_hdf5.py''
 - [Associative Embedding](https://github.com/princeton-vl/pose-ae-train)
 - [Maxing Multiple GPUs of Different Sizes with Keras and TensorFlow](https://github.com/jinkos/multi-gpus)
 
+
+## Citation
+
+If this work help your research, please cite the corresponding paper:
 ```
 @inproceedings{li2020simple,
   title={Simple pose: Rethinking and improving a bottom-up approach for multi-person pose estimation},
